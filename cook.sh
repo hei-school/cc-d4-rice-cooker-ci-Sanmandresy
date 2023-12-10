@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1091
+# shellcheck source=./alert.sh
 source alert.sh
 
 cook_rice(){
@@ -11,12 +11,12 @@ cook_rice(){
     rice_cups=$1
     water_cups=$2
 
-    if [ "$3" == "off" ]; then
+    if [ "$3" == "OFF" ]; then
         echo "You need to turn On the rice cooker first to cook"
         return 1
     fi
 
-    if [ "$4" == "dirty" ]; then
+    if [ "$rice_cooker_state" == "dirty" ]; then
         echo "Clean the rice cooker first !!!"
         return 1
     fi
@@ -40,4 +40,5 @@ cook_rice(){
 
     echo "Done !!!"
     alert_done
+    rice_cooker_state="dirty"
 }

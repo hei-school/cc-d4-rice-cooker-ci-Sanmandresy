@@ -9,7 +9,7 @@ source turn.sh
 source clean.sh
 
 
-rice_cooker_power="off"
+rice_cooker_power="OFF"
 rice_cooker_state="clean"
 
 while true; do
@@ -32,7 +32,7 @@ case $choice in
     turn_on_orr_off "$rice_cooker_power"
     ;;
     3)
-    clean_rice_cooker "$rice_cooker_state"
+    clean_rice_cooker "$rice_cooker_state" "$rice_cooker_power"
     ;;
     4)
     display_status "$rice_cooker_power" "$rice_cooker_state"
