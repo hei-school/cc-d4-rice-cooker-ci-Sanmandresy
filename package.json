@@ -1,0 +1,17 @@
+{
+  "name": "cc-d2-my-rice-cooker-sanmandresy",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "scripts": {
+    "start": "bun run index.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "bun-promptx": "^0.2.0"
+  }
+}
