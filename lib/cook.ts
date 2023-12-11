@@ -1,4 +1,3 @@
-import { sleep } from "bun";
 import { isOnAndClean, getLimits } from ".";
 import type { RiceCooker } from "../types";
 import { createPrompt } from "bun-promptx";
@@ -16,10 +15,7 @@ export const cookRice = (riceCooker: RiceCooker) => {
     }
 
     console.log("Starting...");
-    let cookingTime = riceCups * waterCups * 10_000;
-    console.log("Cooking");
-    sleep(cookingTime);
     riceCooker.state = "dirty";
-    console.log("Done !!!");
+    console.log("Done cooking");
   }
 };
