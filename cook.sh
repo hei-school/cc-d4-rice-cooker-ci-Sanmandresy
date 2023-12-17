@@ -1,5 +1,4 @@
 #!/bin/bash
-# shellcheck source=./alert.sh
 source alert.sh
 
 cook_rice(){
