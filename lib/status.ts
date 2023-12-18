@@ -6,12 +6,18 @@ const showStatus = (riceCooker: RiceCooker): void => {
   );
 };
 
-const getLimits = (riceCooker: RiceCooker): number[] => {
-  return [riceCooker.maximumRiceCups, riceCooker.maximumWaterCups];
+const isExceedingLimits = (
+  riceCups: number,
+  waterCups: number,
+  riceCooker: RiceCooker
+): boolean => {
+  return (
+    riceCups > riceCooker.maximumRiceCups ||
+    waterCups > riceCooker.maximumWaterCups
+  );
 };
-
 const isOnAndClean = (riceCooker: RiceCooker): boolean => {
   return riceCooker.power === "ON" && riceCooker.state == "clean";
 };
 
-export { showStatus, isOnAndClean, getLimits };
+export { showStatus, isOnAndClean, isExceedingLimits };
