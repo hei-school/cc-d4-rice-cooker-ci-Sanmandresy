@@ -1,0 +1,24 @@
+version: 2.1
+orbs:
+  bun: ksylvest/bun@1.0.1
+jobs:
+  bun-tests:
+    docker:
+      - image: cimg/node:21.4.0
+    steps:
+      - checkout
+      - bun/install
+      - run:
+          name: Install dependencies
+          command: bun install
+      - run:
+          name: Run tests
+          command: bun test
+workflows:
+  bun-tests-workflow:
+    jobs:
+      - bun-tests:
+          filters:
+            branches:
+              only:
+                - feature/typescript
